@@ -1,40 +1,7 @@
-# Include documentation
 include README.md
 include LICENSE
-include CHANGELOG.md
-include INSTALL.md
 include requirements.txt
-include pyproject.toml
-include setup.cfg
-include dodo.hy
-include Makefile
-
-# Include source code
 recursive-include src *.py *.hy
-
-# Include examples and demos
-recursive-include demo *.hy *.md .migrations
-recursive-include migrations *.hy *.md
-
-# Include tools
-recursive-include tools *.py *.hy
-
-# Include Claude agents
-recursive-include .claude *.md
-
-# Include tests
-recursive-include tests *.py *.hy
-include test_*.hy
-include test_*.py
-
-# Exclude build artifacts
 global-exclude __pycache__
 global-exclude *.py[co]
 global-exclude .DS_Store
-global-exclude *.db
-global-exclude *.egg-info
-prune build
-prune dist
-prune .git
-prune .venv
-prune venv
