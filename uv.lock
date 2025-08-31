@@ -1,0 +1,22 @@
+# This file is managed by uv - do not edit manually
+version = 1
+
+[[package]]
+name = "hylang-migrations"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "hy" },
+    { name = "hyrule" },
+    { name = "sqlobject" },
+    { name = "colorama" },
+    { name = "python-dotenv" },
+    { name = "tabulate" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "pytest" },
+    { name = "pytest-cov" },
+    { name = "build" },
+]
