@@ -5,12 +5,15 @@ build-backend = "hatchling.build"
 [project]
 name = "hylang-migrations"
 version = "0.1.0"
-description = "Pure Hylang schema migration tool for SQLite with SQLObject integration"
+description = "Pure Hylang database migration tool for SQLite - schema versioning and management in Lisp"
 readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
 authors = [
-    {name = "Your Name", email = "your.email@example.com"}
+    {name = "James", email = "james@example.com"}
+]
+maintainers = [
+    {name = "James", email = "james@example.com"}
 ]
 keywords = ["hylang", "lisp", "migrations", "database", "sqlite", "sqlobject", "schema"]
 classifiers = [
@@ -62,13 +65,27 @@ hy-migrate = "hylang_migrations.cli_wrapper:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/hylang_migrations"]
-
-[tool.hatch.build]
 include = [
     "src/hylang_migrations/**/*.hy",
-    "src/hylang_migrations/**/*.py",
-    ".claude/agents/*.md"
+    "src/hylang_migrations/**/*.py"
 ]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/src",
+    "/migrations",
+    "/demo",
+    "/tools",
+    "/.claude",
+    "/README.md",
+    "/LICENSE",
+    "/pyproject.toml",
+    "/requirements.txt",
+    "/dodo.hy"
+]
+
+[tool.hatch.build]
+sources = ["src"]
 
 [tool.uv]
 managed = true
